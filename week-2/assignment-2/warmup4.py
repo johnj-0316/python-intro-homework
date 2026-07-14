@@ -3,9 +3,12 @@
 #     print(happy)
 #           ^^^^^
 # NameError: name 'happy' is not defined
-# It happened because I tried to print a variable
-# that doesn't exist
+# The error happened because I tried to 
+# print a variable that doesn't exist. Since
+# Python reads top to bottom, the variable happy
+# was called when it didn't have an assignment yet.
 #
-# I defined happy to the integer 3
+# I defined happy to the integer 3 before the print.
+# allowing it to print without error.
 happy = 3
 print(happy)
