@@ -9,6 +9,8 @@
 # was called when it didn't have an assignment yet.
 #
 # I defined happy to the integer 3 before the print.
-# allowing it to print without error.
+# allowing it to print without error. Since happy
+# exists, there is no more name error as happy
+# is assigned 3
 happy = 3
 print(happy)
