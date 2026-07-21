@@ -1,10 +1,10 @@
 num_input = input("Enter a number: ")
 num = int(num_input)
 
-if num == 0:
-    print(f"{num} is zero.")
-elif num < 0:
+if num < 0:
     print(f"{num} is negative.")
+elif num == 0:
+    print(f"{num} is 0.")
 else:
     print(f"{num} is positive.")
     
