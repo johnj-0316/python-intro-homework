@@ -26,7 +26,7 @@ for student in students:
         
 class_avg /= len(students)
 
-print(f"Top scorer:       {max_scorer["name"]} ({max_scorer["score"]})")
+print(f'Top scorer:       {max_scorer["name"]} ({max_scorer["score"]})')
 print(f"Class average:    {class_avg}")
 print(f"Subjects offered: {subject_set}")
 print(f"High scorers:     {high_scorers}")
