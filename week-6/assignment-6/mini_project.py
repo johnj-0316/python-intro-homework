@@ -76,7 +76,7 @@ def main():
             num_index = search(numbers, int(user_number))
             
             if num_index >= 0:
-                print(f"\nFound at index: {num_index}\n")
+                print(f"\nFound at index {num_index}\n")
                 
             else:
                 print(f"Not found")
