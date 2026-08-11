@@ -7,7 +7,7 @@ for i in range(len(names_list)):
         print(f"Found \"{user_input}\" at index {i}.")
         break
     elif i == len(names_list) - 1:
-        print(f"\"{user_input.capitalize()}\" was not found in the list.")
+        print(f"\"{user_input}\" was not found in the list.")
 
 
     

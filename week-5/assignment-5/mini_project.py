@@ -11,7 +11,8 @@ Choose an option (1-5): """)
 
 while user_input:
     if not user_input.isdigit():
-        print("Please enter a number from 1 to 5.")
+        user_input = input("Please enter a number from 1 to 5: ")
+        continue
         
     user_int = int(user_input)
     
@@ -34,11 +35,11 @@ while user_input:
         print(f"\nMaximum: {maximum}\n")
         
     elif user_int == 3:
-        user_number = input("Enter a positive number: ")
+        user_number = input("Enter a number: ")
         
-        while not user_number.isdigit() or int(user_number) <= 0:
+        while not user_number.isdigit():
             print("Please try again.")
-            user_number = input("Enter a positive number: ")
+            user_number = input("Enter a number: ")
         
         for i in range(len(numbers)):
             if int(user_number) == numbers[i]:
