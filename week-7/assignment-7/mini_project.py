@@ -16,10 +16,8 @@ if os.path.exists(expenses_path):
         
         for row in food_dicts:
             total_spent += float(row["amount"])
-            
-        food_report_path = os.path.join("food_report.txt")
         
-        with open(food_report_path, "w") as food_report:
+        with open("food_report.txt", "w") as food_report:
             expenses = "\n".join(list(map(lambda data: f"{data['date']}: ${data['amount']}", food_dicts)))
             food_report.write(
             f"""Food Expense Report — generated {datetime.datetime.now().strftime("%B %d, %Y")}
