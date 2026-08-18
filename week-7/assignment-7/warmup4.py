@@ -1,3 +1,3 @@
-import datetime
+from datetime import datetime
 
-print(datetime.datetime.now().strftime("Today is %B %d, %Y."))
+print(datetime.now().strftime("Today is %B %d, %Y."))

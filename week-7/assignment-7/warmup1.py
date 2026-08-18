@@ -1,5 +1,5 @@
 with open("../data/notes.txt", "r") as file:
-    lines = file.readlines()
-    
-    for line in range(len(lines)):
-        print(f"Line {line + 1}: {lines[line].strip()}");
+    line_num = 1    
+    for line in file:
+        print(f"Line {line_num}: {line.strip()}");
+        line_num += 1
