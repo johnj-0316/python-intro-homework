@@ -22,8 +22,7 @@ if os.path.exists(expenses_path):
             food_report.write(
             f"""Food Expense Report — generated {datetime.datetime.now().strftime("%B %d, %Y")}
 {expenses}
-Total: ${total_spent:.2f}   
-            """
+Total: ${total_spent:.2f}"""
             )
 else:
     print("There was an error opening the expenses.csv file.")
