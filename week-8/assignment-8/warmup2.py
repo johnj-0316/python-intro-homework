@@ -1,4 +1,3 @@
-
 try:
     num1 = float(input("Enter the numerator: "))
     num2 = float(input("Enter the denominator: "))
