@@ -14,14 +14,14 @@ def main():
             for i, row in enumerate(file_dict):
                 try:
                     if None in row:
-                        raise KeyError("extra column detected — skipped")
+                        raise KeyError(f"Row {i + 1}: extra column detected — skipped")
                     
                     data = float(row["amount"])
-                    clean_data += f"  {row['name']} | {row['category']} | ${data:.2f}\n"
+                    clean_data += f" {row['name']} | {row['category']} | ${data:.2f}\n"
                     parsed_row_count += 1
                     
                 except ValueError as value_error:
-                    row_report += f"  Row {i + 1}: ValueError — {str(value_error)}\n"
+                    row_report += f" Row {i + 1}: ValueError — {str(value_error)}\n"
                     skipped_row_count += 1
                 except KeyError as key_error:
                     row_report += str(key_error) + "\n"
