@@ -39,7 +39,7 @@ Skipped rows:
 Clean data:
 {clean_data}
 """)            
-    except Exception as e:
+    except FileNotFoundError as e:
         print("There was an error opening the csv file.")
         return
     
