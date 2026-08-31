@@ -21,7 +21,7 @@ def main():
                     parsed_row_count += 1
                     
                 except ValueError as value_error:
-                    row_report += f"  ValueError — {str(value_error)}\n"
+                    row_report += f"  Row {i + 1}: ValueError — {str(value_error)}\n"
                     skipped_row_count += 1
                 except KeyError as key_error:
                     row_report += str(key_error) + "\n"
