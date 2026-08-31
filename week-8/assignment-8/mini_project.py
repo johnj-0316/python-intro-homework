@@ -15,6 +15,7 @@ def main():
                     if None in row:
                         row_report += f"Row {i + 1}: extra column detected — skipped\n"
                         skipped_row_count += 1
+                        continue
                     
                     data = float(row["amount"])
                     clean_data += f"{row['name']} | {row['category']} | ${data:.2f}\n"
@@ -22,6 +23,10 @@ def main():
                     
                 except ValueError as value_error:
                     row_report += f"Row {i + 1}: ValueError — {str(value_error)}\n"
+                    skipped_row_count += 1
+                    
+                except KeyError as key_error:
+                    row_report += f"Row {i + 1}: extra column detected — skipped\n"
                     skipped_row_count += 1
             
             print("=== CSV Report ===")
