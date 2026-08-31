@@ -13,7 +13,8 @@ def main():
             for i, row in enumerated_dict:
                 try:
                     if None in row:
-                        raise KeyError(f"Row {i + 1}: extra column detected — skipped")
+                        row_report += f"Row {i + 1}: extra column detected — skipped\n"
+                        skipped_row_count += 1
                     
                     data = float(row["amount"])
                     clean_data += f"{row['name']} | {row['category']} | ${data:.2f}\n"
@@ -22,24 +23,17 @@ def main():
                 except ValueError as value_error:
                     row_report += f"Row {i + 1}: ValueError — {str(value_error)}\n"
                     skipped_row_count += 1
-                except KeyError as key_error:
-                    row_report += str(key_error) + "\n"
-                    skipped_row_count += 1
-                
-            print(f"""
-=== CSV Report ===
-Rows attempted:   {skipped_row_count + parsed_row_count}
-Rows parsed:      {parsed_row_count}
-Rows skipped:     {skipped_row_count}
-
-Skipped rows:
-{row_report}
-  
-Clean data:
-{clean_data}
-""")            
+            
+            print("=== CSV Report ===")
+            print(f"Rows attempted:   {skipped_row_count + parsed_row_count}")
+            print(f"Rows parsed:      {parsed_row_count}")
+            print(f"Rows skipped:     {skipped_row_count}\n")
+            print("Skipped rows:")
+            print(f"{row_report}\n")
+            print("Clean data:")
+            print(f"{clean_data}")        
     except FileNotFoundError as e:
-        print("The file \"messy_data.csv\" was not found. Please check the file exists before running the program.")
+        print("The file \"../data/messy_data.csv\" was not found. Please check the file exists before running the program.")
         return
     
 if __name__ == "__main__":
