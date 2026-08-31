@@ -40,7 +40,7 @@ Clean data:
 {clean_data}
 """)            
     except FileNotFoundError as e:
-        print("There was an error opening the csv file.")
+        print("The csv file was not found in the data directory. Please check to make sure the file exists.")
         return
     
 if __name__ == "__main__":
