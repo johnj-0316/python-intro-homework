@@ -1,0 +1,47 @@
+import csv
+
+def main():
+    try:
+        with open("../data/messy_data.csv") as file:
+            file_dict = csv.DictReader(file)
+            parsed_row_count = 0
+            skipped_row_count = 0
+            clean_data = ""
+            row_report = ""
+            
+            print("=== CSV Report ===")
+            
+            for i, row in enumerate(file_dict):
+                try:
+                    if None in row:
+                        raise KeyError("extra column detected — skipped")
+                    
+                    data = float(row["amount"])
+                    clean_data += f"  {row['name']} | {row['category']} | ${data:.2f}\n"
+                    parsed_row_count += 1
+                    
+                except ValueError as value_error:
+                    row_report += f"  ValueError — {str(value_error)}\n"
+                    skipped_row_count += 1
+                except KeyError as key_error:
+                    row_report += str(key_error) + "\n"
+                    skipped_row_count += 1
+                
+            print(f"""
+=== CSV Report ===
+Rows attempted:   {skipped_row_count + parsed_row_count}
+Rows parsed:      {parsed_row_count}
+Rows skipped:     {skipped_row_count}
+
+Skipped rows:
+{row_report}
+  
+Clean data:
+{clean_data}
+""")            
+    except Exception as e:
+        print("There was an error opening the csv file.")
+        return
+    
+if __name__ == "__main__":
+    main()
