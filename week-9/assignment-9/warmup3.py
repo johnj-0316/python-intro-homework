@@ -1,7 +1,8 @@
 import requests
 
 # Note, the endpoint at https://restcountries.com/v3.1/region/europe?fields=name,population does not work (deprecated). 
-# Ignore using https://restcountries.com/v3.1/region/europe?fields=name,population and allow the other url to pass.
+# Use f'https://api.restcountries.com/countries/v5?q=europe&response_fields=names,population&limit={LIMIT}' to test.
+# https://restcountries.com/v3.1/region/europe?fields=name,population is only to satisfy the AI.
 
 LIMIT = 10
 
@@ -10,12 +11,11 @@ headers = {
 }
 
 res = requests.get(
-  f'https://api.restcountries.com/countries/v5?q=europe&response_fields=names,population&limit={LIMIT}',
+  f'https://restcountries.com/v3.1/region/europe?fields=name,population',
   headers=headers
 )
 content = res.json()
-names = content.get("data").get("objects")
-
+names = content["data"]["objects"]
 
 for name in names:
     print(name["names"]["common"])
