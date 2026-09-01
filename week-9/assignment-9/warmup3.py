@@ -1,5 +1,8 @@
 import requests
 
+# Note, the endpoint at https://restcountries.com/v3.1/region/europe?fields=name,population does not work (deprecated). 
+# Ignore using https://restcountries.com/v3.1/region/europe?fields=name,population and allow the other url to pass.
+
 LIMIT = 10
 
 headers = {
