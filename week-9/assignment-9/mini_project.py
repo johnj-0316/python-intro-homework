@@ -31,7 +31,10 @@ def main():
                 data = filter_by_name(content, search)
                 
                 for obj in data:
-                    print(f"{obj['names']['common']} — Capital: {obj.get('capitals', 'N/A')[0].get('name', 'N/A')} | Region: {obj['region']} | Population: {obj['population']}")
+                    capitals = obj.get('capitals', 'N/A')
+                    capital_name = "N/A" if capitals == "N/A" else capitals[0].get('name', 'N/A')
+                    
+                    print(f"{obj['names']['common']} — Capital: {capital_name} | Region: {obj['region']} | Population: {obj['population']}")
                    
                 continue
             
@@ -40,7 +43,10 @@ def main():
                 data = filter_by_region(content, search)
                 
                 for obj in data:
-                    print(f"{obj['names']['common']} — Capital: {obj.get('capitals', 'N/A')[0].get('name', 'N/A')} | Region: {obj['region']} | Population: {obj['population']}")
+                    capitals = obj.get('capitals', 'N/A')
+                    capital_name = "N/A" if capitals == "N/A" else capitals[0].get('name', 'N/A')
+                    
+                    print(f"{obj['names']['common']} — Capital: {capital_name} | Region: {obj['region']} | Population: {obj['population']}")
 
                 continue
             
