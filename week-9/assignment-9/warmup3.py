@@ -11,11 +11,11 @@ headers = {
 }
 
 res = requests.get(
-  f'https://restcountries.com/v3.1/region/europe?fields=name,population&limit=10',
+  f'https://restcountries.com/v3.1/region/europe?fields=name,population',
   headers=headers
 )
 content = res.json()
 names = content
 
-for name in names:
-    print(name["name"]["common"])
+for i in range(10):
+    print(names[i]["name"]["common"])
