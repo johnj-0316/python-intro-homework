@@ -12,9 +12,13 @@ def main():
         }
     
         res = requests.get(
-            'https://restcountries.com/v3.1/all?fields=name,capital,region,population',
+            'https://api.restcountries.com/countries/v5?q=all&response_fields=names,capitals,region,population',
             headers=headers
         )
+        
+        if res.status_code != 200:
+            print("Error: Could not reach the server. Check your connection and try again.")
+            return
         
         content = res.json()
         
