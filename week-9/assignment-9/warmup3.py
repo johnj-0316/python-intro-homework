@@ -17,5 +17,5 @@ res = requests.get(
 content = res.json()
 names = content
 
-for i in range(10):
+for i in range(min(10, len(names))):
     print(names[i]["name"]["common"])

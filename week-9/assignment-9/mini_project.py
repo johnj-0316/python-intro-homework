@@ -45,7 +45,7 @@ def main():
                 continue
             
             if user_input == "2":
-                search = input("Search: ").lower()
+                search = input("Region Name: ").lower()
                 data = filter_by_region(content, search)
                 
                 for obj in data:
@@ -64,7 +64,7 @@ def main():
 def filter_by_name(content, name = ""):
     data = content
     name = name.lower()
-    by_name = filter(lambda obj: name in obj["names"]["common"].lower(), data)
+    by_name = filter(lambda obj: name in obj["name"]["common"].lower(), data)
     return list(by_name)
     
 def filter_by_region(content, region):
