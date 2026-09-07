@@ -7,13 +7,8 @@ import requests
 
 def main():
     try:
-        headers = {
-            'Authorization': 'Bearer rc_live_69ccf94c4c5f4c4381b466392cb84fb9',
-        }
-    
         res = requests.get(
             'https://restcountries.com/v3.1/all?fields=name,capital,region,population',
-            headers=headers
         )
         
         if res.status_code != 200:
