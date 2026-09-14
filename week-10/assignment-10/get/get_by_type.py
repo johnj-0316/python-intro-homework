@@ -1,5 +1,5 @@
 import requests
-from get_api_endpoint import get_api_endpoint
+from get.get_api_endpoint import get_api_endpoint
 
 API_TYPE_BASE = get_api_endpoint("type")
 
