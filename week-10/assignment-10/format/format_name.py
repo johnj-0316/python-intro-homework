@@ -1,6 +1,6 @@
-def format_name(name: str, num_spacing: int = 20):    
-    if num_spacing - len(name) % 2 != 0:
-            num_spacing += 1
+def format_name(name: str, spacing: int = 40):    
+    if (spacing - len(name)) % 2 != 0:
+            spacing += 1
             
-    space_length = (num_spacing - len(name)) // 2
+    space_length = (spacing - len(name)) // 2
     return f"{" " * space_length}{name}{" " * space_length}" 
