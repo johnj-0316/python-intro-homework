@@ -8,7 +8,7 @@ def get_pokemon(name: str):
         res = requests.get(f"{API_POKEMON_BASE}{name}")
             
         if res.status_code != 200:
-            raise requests.exceptions.HTTPError("There was an error making the request")
+            raise requests.exceptions.HTTPError("Invalid status code")
         
         json = res.json()
         return json
