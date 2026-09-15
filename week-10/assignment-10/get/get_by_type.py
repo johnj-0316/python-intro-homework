@@ -14,12 +14,12 @@ def get_by_type(type: str):
         pokelist = []
         
         for pokemon in json["pokemon"]:
-            pokelist.append({
+            pokelist.append(dict({
                 "slot": pokemon["slot"],
                 "pokemon": {
                     "name": pokemon["pokemon"]["name"]
                 }
-            })
+            }))
         
         return {
             "pokemon": pokelist

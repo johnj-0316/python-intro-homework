@@ -11,12 +11,12 @@ def get_pokemon(name: str = ""):
         
         json = res.json()
         
-        return [{
+        return [dict({
             "name": json["name"],
             "abilities": json["abilities"],
             "stats": json["stats"],
             "types": json["types"]
-        }]
+        })]
     
     except requests.exceptions.ConnectionError as connect_err:
             print(f"There was a problem connecting with the API: {connect_err}")
