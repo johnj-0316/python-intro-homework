@@ -8,7 +8,7 @@ def get_by_type(type: str):
         res = requests.get(f"{API_TYPE_BASE}{type}")
         
         if res.status_code != 200:
-            raise requests.exceptions.HTTPError("Invalid status code")
+            raise requests.exceptions.HTTPError("Not a valid type!")
         
         json = res.json()
         return json

@@ -7,7 +7,7 @@ def get_pokemon(name: str = "", offset: str = "0", limit: str = "5"):
     try:
         res = requests.get(f"{API_POKEMON_BASE}{name}/?limit={limit}&offset={offset}")
         if res.status_code != 200:
-            raise requests.exceptions.HTTPError("Invalid status code")
+            raise requests.exceptions.HTTPError("Not a valid pokemon!")
         
         json = res.json()
         return json
