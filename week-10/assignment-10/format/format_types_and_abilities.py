@@ -17,4 +17,4 @@ def format_types_and_abilities(types: list[dict], spacing: int = 40) -> str:
         spacing += 1
     
     space_length = (spacing - len(formatted_types)) // 2
-    return f"{" " * space_length}{formatted_types}{" " * space_length}"
+    return f"{' ' * space_length}{formatted_types}{' ' * space_length}"

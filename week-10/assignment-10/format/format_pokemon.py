@@ -12,13 +12,13 @@ def format_pokemon(pokemon_data: dict, spacing: int = 40) -> str:
     
     return (
 f"""
-{format_line("#", num_spacing)}
+{format_line('#', num_spacing)}
 {format_name(name, num_spacing)}
-{format_line("-", num_spacing)}
+{format_line('-', num_spacing)}
 {format_types_and_abilities(types, num_spacing)}
-{format_line(" ", num_spacing)}
+{format_line(' ', num_spacing)}
 {format_types_and_abilities(abilities, num_spacing)}
-{format_line("#", num_spacing)}
+{format_line('#', num_spacing)}
 {format_stats(stats, num_spacing)}
 """
     )

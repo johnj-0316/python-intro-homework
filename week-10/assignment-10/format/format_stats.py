@@ -19,6 +19,6 @@ def format_stats(stats: list[dict], spacing: int = 40) -> str:
         num_spacing = (available_space - len(stat_num)) // 2
         separator_spacing = (1 + (midline % 2))
             
-        res += f"{" " * name_spacing}{stat_name.capitalize()}{" " * (name_spacing - offset)}{"#" * separator_spacing}{" " * num_spacing}{stat_num}\n"
+        res += f"{' ' * name_spacing}{stat_name.capitalize()}{' ' * (name_spacing - offset)}{'#' * separator_spacing}{' ' * num_spacing}{stat_num}\n"
     
     return res
