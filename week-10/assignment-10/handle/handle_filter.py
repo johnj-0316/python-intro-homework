@@ -6,12 +6,11 @@ def handle_filter(type: str):
         print("The input type is not a string!")
         return
     
-    type = type.lower()
-    
     if not type:
         print("Please enter a type into the field below.")
         return
     
+    type = type.lower()
     res = get_by_type(type)
     
     if not res:
