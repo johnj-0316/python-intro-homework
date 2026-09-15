@@ -8,6 +8,10 @@ def handle_search(name: str):
         print("The input type is not a string!")
         return
     
+    if not name or not name.isalpha():
+        print("Please enter a name into the field below.")
+        return
+    
     name = name.lower()
     pokemon = get_pokemon(name)
     
