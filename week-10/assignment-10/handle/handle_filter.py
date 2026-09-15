@@ -2,6 +2,7 @@ from get.get_by_type import get_by_type
 from handle.handle_yes import handle_yes
 
 def handle_filter(type: str):
+    type = type.lower()
     res = get_by_type(type)
     
     if not res:

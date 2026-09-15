@@ -6,7 +6,6 @@ API_POKEMON_BASE = get_api_endpoint("pokemon")
 def get_pokemon(name: str = "", offset: str = "0", limit: str = "5"):
     try:
         res = requests.get(f"{API_POKEMON_BASE}{name}/?limit={limit}&offset={offset}")
-        print(f"{API_POKEMON_BASE}{name}/?limit={limit}&offset={offset}")
         if res.status_code != 200:
             raise requests.exceptions.HTTPError("Invalid status code")
         
