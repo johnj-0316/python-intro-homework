@@ -17,13 +17,16 @@ def handle_filter(type: str):
     limit = 10
     offset = 0
     
-    while True:
-        for i in range(offset * limit, min(limit * (offset + 1), len(pokemon))):
-            p = pokemon[i]
-            slot_type = "st" if p["slot"] == 1 else "nd"
-            print(f"{p["pokemon"]["name"].capitalize()} | {p["slot"]}{slot_type} slot")
+    try:
+        while True:
+            for i in range(offset * limit, min(limit * (offset + 1), len(pokemon))):
+                p = pokemon[i]
+                slot_type = "st" if p["slot"] == 1 else "nd"
+                print(f"{p["pokemon"]["name"].capitalize()} | {p["slot"]}{slot_type} slot")
+                
+            if not handle_yes("looking through the pokemon (Y/n)"):
+                break
             
-        if not handle_yes("looking through the pokemon (Y/n)"):
-            break
-        
-        offset += 1
+            offset += 1
+    except Exception as e:
+        print(f"Something went wrong with getting the pokemon matching the type. {e}")
