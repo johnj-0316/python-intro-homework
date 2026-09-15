@@ -4,8 +4,6 @@ from format.format_line import format_line
 from handle.handle_yes import handle_yes
 
 def handle_search(name: str):
-    pokemon = get_pokemon(name)
-    
     try:
         while True:
             if not isinstance(name, str):
@@ -17,6 +15,7 @@ def handle_search(name: str):
                 return
             
             name = name.lower()
+            pokemon = get_pokemon(name)
             
             if not pokemon:
                 print("There was a problem with your input. Please try again.")
