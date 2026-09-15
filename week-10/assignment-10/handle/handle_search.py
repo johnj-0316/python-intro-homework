@@ -8,7 +8,7 @@ def handle_search(name: str):
         print("The input type is not a string!")
         return
     
-    if not name or not name.isalpha():
+    if not name:
         print("Please enter a name into the field below.")
         return
     

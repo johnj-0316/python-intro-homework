@@ -8,7 +8,7 @@ def handle_filter(type: str):
     
     type = type.lower()
     
-    if not type or not type.isalpha():
+    if not type:
         print("Please enter a type into the field below.")
         return
     
