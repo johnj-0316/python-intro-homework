@@ -21,7 +21,7 @@ def handle_search(name: str):
                 print("There was a problem with your input. Please try again.")
                 return
             
-            print(format_pokemon(pokemon))
+            print(format_pokemon(pokemon[0]))
             print(format_line(" "))
             
             if not handle_yes("displaying pokemon details (Y/n)"):
