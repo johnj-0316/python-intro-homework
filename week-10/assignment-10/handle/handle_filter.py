@@ -26,7 +26,7 @@ def handle_filter(type: str):
             for i in range(offset * limit, min(limit * (offset + 1), len(pokemon))):
                 p = pokemon[i]
                 slot_type = "st" if p["slot"] == 1 else "nd"
-                print(f"{p["name"].capitalize()} | {p["slot"]}{slot_type} slot")
+                print(f"{p['name'].capitalize()} | {p['slot']}{slot_type} slot")
                 
             if not handle_yes("looking through the pokemon (Y/n)"):
                 break
