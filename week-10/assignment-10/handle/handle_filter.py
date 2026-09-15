@@ -2,10 +2,15 @@ from get.get_by_type import get_by_type
 from handle.handle_yes import handle_yes
 
 def handle_filter(type: str):
+    if not isinstance(type, str):
+        print("The input type is not a string!")
+        return
+    
     type = type.lower()
     res = get_by_type(type)
     
     if not res:
+        print("There was a problem with your input. Please try again.")
         return
     
     pokemon = res["pokemon"]
