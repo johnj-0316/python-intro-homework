@@ -11,7 +11,19 @@ def get_by_type(type: str):
             raise requests.exceptions.HTTPError("Not a valid type!")
         
         json = res.json()
-        return json
+        pokelist = []
+        
+        for pokemon in json["pokemon"]:
+            pokelist.append({
+                "slot": pokemon["slot"],
+                "pokemon": {
+                    "name": pokemon["pokemon"]["name"]
+                }
+            })
+        
+        return {
+            "pokemon": pokelist
+        }
         
     except requests.exceptions.ConnectionError as connect_err:
         print(f"There was a problem connecting with the API: {connect_err}")
