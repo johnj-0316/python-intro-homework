@@ -14,7 +14,7 @@ def handle_search(name: str):
         print(format_pokemon(pokemon))
         print(format_line(" "))
         
-        if not handle_yes("displaying pokemon details"):
+        if not handle_yes("displaying pokemon details (Y/n)"):
             break
         
         name = input("Enter the name of a pokemon: ").lower()
