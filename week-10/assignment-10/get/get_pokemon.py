@@ -12,6 +12,9 @@ def get_pokemon(name: str = "", offset: str = "0", limit: str = "5"):
         json = res.json()
         return json
     
+    except requests.exceptions.ConnectionError as connect_err:
+            print(f"There was a problem connecting with the API: {connect_err}")
+    
     except requests.exceptions.HTTPError as http_err:
         print(f"The pokemon request returned a bad status code: {http_err}")
     

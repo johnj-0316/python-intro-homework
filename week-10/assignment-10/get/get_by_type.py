@@ -13,6 +13,9 @@ def get_by_type(type: str):
         json = res.json()
         return json
         
+    except requests.exceptions.ConnectionError as connect_err:
+        print(f"There was a problem connecting with the API: {connect_err}")
+        
     except requests.exceptions.HTTPError as http_err:
         print(f"The types request returned a bad status code: {http_err}")
         
