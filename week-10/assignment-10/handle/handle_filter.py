@@ -18,7 +18,7 @@ def handle_filter(type: str):
         print("There was a problem with your input. Please try again.")
         return
     
-    pokemon = res["pokemon"]
+    pokemon = res
     limit = 10
     offset = 0
     
@@ -27,7 +27,7 @@ def handle_filter(type: str):
             for i in range(offset * limit, min(limit * (offset + 1), len(pokemon))):
                 p = pokemon[i]
                 slot_type = "st" if p["slot"] == 1 else "nd"
-                print(f"{p["pokemon"]["name"].capitalize()} | {p["slot"]}{slot_type} slot")
+                print(f"{p["name"].capitalize()} | {p["slot"]}{slot_type} slot")
                 
             if not handle_yes("looking through the pokemon (Y/n)"):
                 break

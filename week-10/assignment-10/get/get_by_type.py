@@ -16,14 +16,10 @@ def get_by_type(type: str):
         for pokemon in json["pokemon"]:
             pokelist.append(dict({
                 "slot": pokemon["slot"],
-                "pokemon": {
-                    "name": pokemon["pokemon"]["name"]
-                }
+                "name": pokemon["pokemon"]["name"]
             }))
         
-        return {
-            "pokemon": pokelist
-        }
+        return pokelist
         
     except requests.exceptions.ConnectionError as connect_err:
         print(f"There was a problem connecting with the API: {connect_err}")
