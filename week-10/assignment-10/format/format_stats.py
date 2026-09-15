@@ -1,6 +1,6 @@
 from math import ceil
 
-def format_stats(stats: list[dict], spacing: int = 40):
+def format_stats(stats: list[dict], spacing: int = 40) -> str:
     # ["base_stat"]
     # ["stat"]["name"]
     midline = ceil(spacing / 2) - 1

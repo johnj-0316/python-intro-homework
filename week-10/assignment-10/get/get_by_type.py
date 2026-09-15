@@ -14,7 +14,7 @@ def get_by_type(type: str):
         return json
         
     except requests.exceptions.HTTPError as http_err:
-        print(f"The request returned a bad status code: {http_err}")
+        print(f"The types request returned a bad status code: {http_err}")
         
     except requests.exceptions.RequestException as req_err:
         print(f"There was an error: {req_err}")

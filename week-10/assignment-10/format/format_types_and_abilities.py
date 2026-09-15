@@ -1,6 +1,6 @@
 import functools
 
-def format_types_and_abilities(types: list[dict], spacing: int = 40):    
+def format_types_and_abilities(types: list[dict], spacing: int = 40) -> str:    
     type_ability_names         = [
         (type_ability["type" if "type" in type_ability else "ability"])["name"].capitalize() 
         for type_ability in types
