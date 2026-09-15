@@ -4,19 +4,19 @@ from format.format_line import format_line
 from handle.handle_yes import handle_yes
 
 def handle_search(name: str):
-    if not isinstance(name, str):
-        print("The input type is not a string!")
-        return
-    
-    if not name:
-        print("Please enter a name into the field below.")
-        return
-    
     name = name.lower()
     pokemon = get_pokemon(name)
     
     try:
         while True:
+            if not isinstance(name, str):
+                    print("The input type is not a string!")
+                    return
+                
+            if not name:
+                print("Please enter a name into the field below.")
+                return
+            
             if not pokemon:
                 print("There was a problem with your input. Please try again.")
                 return
