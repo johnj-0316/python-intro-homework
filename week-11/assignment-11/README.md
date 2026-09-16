@@ -13,7 +13,7 @@ On inputs that require a yes, you may enter "yes", "ye", or "y", disregarding ca
 Invalid inputs will immediately stop the action and display an appropriate error.
 
 EXTENSION: CHOICE A - matplotlib
-The extension uses matplotlib to create a small bar graph, detailing how frequent a chosen type is in certain slots. For context, all pokemon have types, but some have 2 types. For those with 2, while the order of the type does not matter too much, it is interesting to see how prominent certain types are in certain slots (is water more common as the first or second type)? Using the API, Counter, and a matplotlib, the extension counts the frequencies and compares the two visually.
+The extension uses matplotlib to create a small bar graph, detailing how frequent a chosen type is in certain slots. For context, all pokemon have types, but some have 2 types. For those with 2, while the order of the type does not matter too much, it is interesting to see how prominent certain types are in certain slots (is water more common as the first or second type)? Using the API, built in Counter from collections module, and a matplotlib, the extension counts the frequencies and compares the two visually.
 
 Question: "How frequent does the {type chosen, i.e. electric} type appear as the 1st and 2nd slot for all pokemon?"
 
