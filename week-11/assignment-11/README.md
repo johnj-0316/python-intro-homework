@@ -20,6 +20,10 @@ Question: "How frequent does the {type chosen, i.e. electric} type appear as the
 
 Visualization starts with the x axis labeled as slot 1 or slot 2, the y axis showing the frequency counts, and the title reflecting the chosen type. The color chosen for the bars is blue, and each bar shows the actual frequency above it.
 
+The main takeaway is that slot frequencies for types are varied. Electric is heavily skewed towards slot 1, while types like ground and steel are fairly uniform. This shows that pokemon favors certain types in slot 1 over others.
+
+A bar chart was chosen because of the simplicity of the data. Only two values are measured, but their comparison is the true purpose. A bar chart highlights the difference in values by having them side-by-side, and the gap in height or lack thereof displays the variance mentioned above better than a line graph or pie chart. 
+
 The repo will show a demo of the type "electric".
 
 How to install and run:
