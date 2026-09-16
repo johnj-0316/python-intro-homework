@@ -1,7 +1,7 @@
 from collections import Counter
 from get.get_by_type import get_by_type
 
-def chart_data(pokemon: list):
+def chart_data(pokemon: list) -> dict[str, list[str | int]]:
     count = Counter(p["slot"] for p in pokemon)
             
     return {
